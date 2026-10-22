@@ -2623,7 +2623,7 @@ html.splash-aktif body { overflow: hidden; }
 .splash__foto {
 	position: absolute;
 	inset: 0;
-	background: url('../img/foto-sementara.webp') center 30% / cover no-repeat;
+	background: url('../img/post-seni-tari.webp') center 75% / cover no-repeat;
 	transform: scale(1.04);
 	animation: splash-zoom 3s ease-out forwards;
 }
