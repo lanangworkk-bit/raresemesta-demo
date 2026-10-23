@@ -197,8 +197,7 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 ( function () {
 	try {
 		var p = new URLSearchParams( location.search );
-		var lewat = sessionStorage.getItem( 'rs-splash' ) === '1';
-		if ( p.get( 'splash' ) === '0' || ( lewat && p.get( 'splash' ) !== '1' ) ) {
+		if ( p.get( 'splash' ) === '0' ) {
 			document.documentElement.classList.add( 'splash-lewat' );
 		} else {
 			document.documentElement.classList.add( 'splash-aktif' );
@@ -415,7 +414,7 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 			</div>
 
 			<div class="kontak-maps">
-				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15788.756187652758!2d115.44158655!3d-8.36873995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd21d2be7c87c29%3A0xe54e2cf83f7a1f59!2sBesakih%2C%20Rendang%2C%20Karangasem%20Regency%2C%20Bali!5e0!3m2!1sen!2sid!4v1700000000000!5m2!1sen!2sid" loading="lazy" title="Peta Lokasi Besakih Karangasem"></iframe>
+				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15788.756187652758!!2d115.4414563!3d-8.3702913!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd21d0d79a02f25%3A0x924f842b74f9b88!2sPRATAMA%20WIDYA%20PASRAMAN%20RARE%20SEMESTA!5e0!3m2!1sen!2sid!4v1760800000000!5m2!1sen!2sid" loading="lazy" title="Peta Lokasi Besakih Karangasem"></iframe>
 			</div>
 
 		</div>

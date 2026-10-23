@@ -10,18 +10,29 @@
 		var tutupSplash = function () {
 			if (splash.classList.contains('is-done')) return;
 			splash.classList.add('is-done');
-			try { sessionStorage.setItem('rs-splash', '1'); } catch (e) {}
 			setTimeout(function () {
 				splash.style.display = 'none';
 				document.documentElement.classList.remove('splash-aktif');
 			}, 600);
 		};
-		var jeda = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 400 : 2600;
+		var jeda = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 400 : 1500;
 		setTimeout(tutupSplash, jeda);
 		splash.addEventListener('click', tutupSplash);
 		document.addEventListener('keydown', function (e) {
 			if (e.key === 'Escape' || e.key === 'Enter' || e.key === ' ') tutupSplash();
 		});
+	}
+
+	/* Hero video: muat hanya setelah halaman selesai (hemat bandwidth awal). */
+	var videoHero = document.querySelector('.hero__video source[data-src]');
+	if (videoHero) {
+		var muatVideo = function () {
+			videoHero.src = videoHero.dataset.src;
+			var v = videoHero.closest('video');
+			if (v) { v.load(); var p = v.play(); if (p && p.catch) p.catch(function () {}); }
+		};
+		if (document.readyState === 'complete') muatVideo();
+		else window.addEventListener('load', muatVideo);
 	}
 
 	/* Toggle menu mobile. */
